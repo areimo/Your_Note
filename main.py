@@ -48,6 +48,9 @@ icon = Image.open(icon_path)
 photo = ImageTk.PhotoImage(icon)
 root.iconphoto(False,photo)
 
+    title = tk.Label(secondary_window, text="Añadir Actividad", font=(font_path, 15,"bold"), foreground="black", wraplength=355, justify="center", anchor="center", background="white")
+    label_text4.pack(pady=11)
+
 
 ########## About ##########
 
