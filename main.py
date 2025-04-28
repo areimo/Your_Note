@@ -38,7 +38,7 @@ font_bold_path = resource_path("assets/fonts/tahomabd.ttf")
 
 if os.path.exists(icon_path):
     try:
-        root.iconbitmap(icon_path)  
+        root.iconphoto(icon_path)  
     except Exception as e:
         print(f"Advertencia: No se pudo cargar el icono. Error: {e}")
 else:
@@ -58,6 +58,7 @@ def open_window():
     secondary_window.geometry("400x500")
     secondary_window.configure(bg="white")
     secondary_window.resizable(0, 0)
+    secondary_window.iconphoto(False,photo)
     
 
     img_icon = Image.open(note_icon_path).resize((200, 200))
@@ -86,11 +87,10 @@ def open_window():
 
     if os.path.exists(icon_path):
         try:
-            secondary_window.iconbitmap(icon_path)
+            secondary_window.iconphoto(icon_path)
         except Exception as e:
             print(f"⚠️ Advertencia: No se pudo cargar el icono. Error: {e}")
   
-menu_bar = tk.Menu(root)
 menu_bar = tk.Menu(root, tearoff=0, bg="white", fg="black", relief="flat")
 menu_bar.add_command(label="Acerca de",command=open_window)
 root.config(menu=menu_bar)
