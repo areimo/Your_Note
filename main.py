@@ -17,6 +17,10 @@ for path in [assets_path,fonts_path, icons_path, icon_path, note_icon_path, read
     if not os.path.exists(path):
         print(f"Advertencia: La carpeta {path} no existe.")
 
+
+########## Main Menu ##########
+
+
 root = tk.Tk()
 root.title("Your Note: App de notas")
 root.geometry("800x600")
@@ -50,6 +54,11 @@ root.iconphoto(False,photo)
 
     title = tk.Label(secondary_window, text="Añadir Actividad", font=(font_path, 15,"bold"), foreground="black", wraplength=355, justify="center", anchor="center", background="white")
     label_text4.pack(pady=11)
+
+add_img = Image.open(add_img_path).resize((200,200))
+tk_add_img = ImageTk.PhotoImage(add_img)
+label_add = tk_add_img
+label_add.pady(50)
 
 
 ########## About ##########
