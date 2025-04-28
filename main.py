@@ -11,9 +11,10 @@ fonts_path = os.path.join(BASE_DIR, "assets", "fonts")
 icons_path = os.path.join(BASE_DIR, "assets", "icons")
 icon_path = os.path.join(BASE_DIR, "assets", "icons", "icon.png")
 note_icon_path = os.path.join(BASE_DIR, "assets", "icons", "note_icon.png")
+add_img_path = os.path.join(BASE_DIR, "assets", "others", "add_img.png")
 readme_path = os.path.join(BASE_DIR, "README.txt")
 
-for path in [assets_path,fonts_path, icons_path, icon_path, note_icon_path, readme_path]:
+for path in [assets_path,fonts_path, icons_path, icon_path, note_icon_path, add_img_path,readme_path]:
     if not os.path.exists(path):
         print(f"Advertencia: La carpeta {path} no existe.")
 
@@ -37,6 +38,7 @@ def resource_path(relative_path):
 icons_folder_path = resource_path("assets/icons")
 icon_path = resource_path("assets/icons/icon.png")
 note_icon_path = resource_path("assets/icons/note_icon.png")
+add_png_path = resource_path("assets/others/add_img.png")
 font_path = resource_path("assets/fonts/tahoma.ttf")
 font_bold_path = resource_path("assets/fonts/tahomabd.ttf")
 
