@@ -108,31 +108,30 @@ def open_window():
     label_img = tk.Label(secondary_window, image=tkimg_icon, background="lightgrey")
     label_img.image = tkimg_icon  
     label_img.pack(pady=10)
-    label_text = tk.Label(secondary_window, text="Your Note: App de notas", font=(font_bold_path, 13), foreground="black", background="lightgrey")
+
+    label_text = tk.Label(secondary_window,text="Your Note: App de notas",font=(font_bold_path, 13),
+        foreground="black",background="lightgrey")
     label_text.pack(pady=5)
-    label_text2 = tk.Label(secondary_window, text="Versión 1.0", font=(font_path, 10), foreground="black", background="lightgrey")
+
+    label_text2 = tk.Label(secondary_window,text="Versión 1.0",font=(font_path, 10),
+        foreground="black",background="lightgrey")
     label_text2.pack(pady=8)
-    label_text4 = tk.Label(secondary_window, text="Your Note es una herramienta la cual permite crear una lista de actividades y exportarla como una imagen PNG", font=(font_path, 10), foreground="black", wraplength=355, justify="center", anchor="center", background="lightgrey")
+
+    label_text4 = tk.Label(secondary_window,text="Your Note es una herramienta la cual permite crear una lista de actividades y exportarla como una imagen PNG",font=(font_path, 10),
+        foreground="black",wraplength=355,justify="center",anchor="center",background="lightgrey")
     label_text4.pack(pady=11)
 
-    close_button = tk.Button(secondary_window, text="Cerrar", font=("assets/fonts/tahoma.ttf", 10), cursor="hand2",
-                             relief="raised", bd=3, bg="#27548A", fg="white", command=secondary_window.destroy)
+    close_button = tk.Button(secondary_window,text="Cerrar",font=("assets/fonts/tahoma.ttf", 10),cursor="hand2",relief="raised",
+        bd=3,bg="#27548A",fg="white",command=secondary_window.destroy)
     close_button.bind("<ButtonPress>", lambda event: event.widget.config(bg="#183B4E"))
     close_button.bind("<ButtonRelease>", lambda event: event.widget.config(bg="#27548A"))
     close_button.bind("<Enter>", lambda event: event.widget.config(bg="#183B4E")) 
     close_button.bind("<Leave>", lambda event: event.widget.config(bg="#27548A"))
     close_button.pack(pady=40)
 
-    credits = tk.Label(secondary_window, text="2025 - @areimo on GitHub", font=(font_path, 8), foreground="grey", background="lightgrey")
+    credits = tk.Label(secondary_window,text="2025 - @areimo on GitHub",font=(font_path, 8),foreground="grey",background="lightgrey")
     credits.pack(pady=10)
 
-    if os.path.exists(icon_path):
-     try:
-        icon = Image.open(icon_path)
-        photo = ImageTk.PhotoImage(icon)
-        root.iconphoto(False, photo)
-     except Exception as e:
-        print(f"Advertencia: No se pudo cargar el icono. Error: {e}")
 
 menu_bar = tk.Menu(root, tearoff=0, bg="gray", fg="black", relief="raised")
 menu_bar.add_command(label="Acerca de",command=open_window)
